@@ -1,6 +1,6 @@
 # AI Web Scraper
 
-This is a simple AI-powered web scraper that fetches the content of a given URL, extracts meaningful text, and summarizes it.
+This is a AI agent that scraps and fetches the content of a given URL, extracts meaningful text, and summarizes it.
 
 ## Installation
 
