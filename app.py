@@ -16,7 +16,7 @@ def fetch_webpage(url):
 def extract_content(html):
     
     soup = BeautifulSoup(html, 'html.parser')
-    paragraphs = soup.find_all('p')
+    paragraphs = soup.find_all(['p', 'div', 'span', 'li', 'article', 'section', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
     text = '\n'.join([para.get_text() for para in paragraphs])
     return text if text else "No content found"
 
@@ -34,11 +34,12 @@ def main():
         return
     
     content = extract_content(html)
-    print("\nExtracted Content:\n", content[:1000], "...")  
     
     summary = summarize_text(content)
     print("\nSummary:\n", summary)
-
+    print('Content Length',len(content))
+    print('Summary Length',len(summary))
+    
 if __name__ == "__main__":
     print("Script is running...")
     main()
